@@ -1,3 +1,39 @@
+# How to do LLM-drop in SegViT?
+
+## 1. Download dataset & checkpoints and config them(it is a little bit unstraight-forward, contact me, or refer to MMSegmentation offcial docs for reference)
+
+## 2. Calculate attention layers' importance scores
+
+- open *SegVit/llm_drop/utils.py*
+- set IMPORTANCE_CHECK_ON = True
+```
+IMPORTANCE_CHECK_ON = True
+```
+- keep SKIP_LAYERS empty
+```
+SKIP_LAYERS = set()
+```
+- then load tuned-checkpoint and run inference
+- open folder *SegVit/llm_drop/saved_importance*
+  the saved score json is the latest one
+
+
+## 3. Select layer indexes and add them to SKIP_LAYERS
+- manually (or write a top-k function) pick some indexes 
+  from score json
+- set these indexes to SKIP_LAYERS
+```
+SKIP_LAYERS = set(
+    [
+        14,16,18,20
+    ]
+)
+```
+- then again, load tuned-checkpoint and run inference
+
+## 4. run cpu-inference on Linux:
+  use *SegVit/test_linux.sh*
+
 # Official Pytorch Implementation of SegViT [[ckpt]](https://huggingface.co/Akide/SegViTv1)
 
 ### SegViT: Semantic Segmentation with Plain Vision Transformers 

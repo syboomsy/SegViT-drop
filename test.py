@@ -23,6 +23,7 @@ from decode_heads import atm_head, tpn_atm_head
 from backbone import vit_shrink
 from losses import atm_loss
 
+#NOTE here, import ImportanceCheckViT so that it can trigger registration 
 from llm_drop.models import ImportanceCheckViT
 
 from llm_drop.utils import (
