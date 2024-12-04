@@ -1,0 +1,1 @@
+python .\test.py .\configs\llm_drop\segvit_drop_640x640_ade20k.py  D:\workspace\cuhk\term3\cv\checkpoints\ade_54.6.pth --eval mIoU

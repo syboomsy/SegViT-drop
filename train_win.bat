@@ -1,0 +1,1 @@
+python .\train.py .\configs\segvit\segvit_vit-l_jax_640x640_160k_ade20k_test.py 

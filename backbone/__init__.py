@@ -1,0 +1,1 @@
+from .vit_shrink import vit_shrink
